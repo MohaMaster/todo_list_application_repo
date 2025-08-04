@@ -41,7 +41,7 @@ class UserViewSet(viewsets.ModelViewSet):
         Die Registrierung ist für jedermann erlaubt ('AllowAny').
         Andere Aktionen sind nur für authentifizierte Benutzer.
         """
-        if self.action == 'create':
+        if self.action == 'create' or self.action == 'register':
             permission_classes = [AllowAny]
         else:
             permission_classes = [IsAuthenticated]
